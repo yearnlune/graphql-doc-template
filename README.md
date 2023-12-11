@@ -3,7 +3,10 @@
 ## Install
 
 ```
-npx npx create-docusaurus@latest [name] https://github.com/yearnlune/graphql-doc-template.git
+npx create-docusaurus@latest [name] -p yarn -g shallow
+
+# Git repository
+https://github.com/yearnlune/graphql-doc-template.git
 ```
 
 ## Generate graphql docs
