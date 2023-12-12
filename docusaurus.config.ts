@@ -2,6 +2,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import {directiveDescriptor, directiveTag} from "@graphql-markdown/helpers"
+import docusaurusLunrSearch from 'docusaurus-lunr-search'
 
 
 const config: Config = {
@@ -24,6 +25,12 @@ const config: Config = {
   onBrokenMarkdownLinks: 'warn',
 
   plugins: [
+    [
+      docusaurusLunrSearch,
+      {
+        languages: ['en', 'ko']
+      }
+    ],
     [
       "@graphql-markdown/docusaurus",
       {
@@ -111,15 +118,6 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
           title: 'Community',
           items: [
             {
@@ -139,10 +137,6 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
