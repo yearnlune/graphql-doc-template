@@ -34,6 +34,25 @@ const config: Config = {
     [
       "@graphql-markdown/docusaurus",
       {
+        schema: [
+          "schema" // graphql paths
+        ],
+        baseURL: '.',
+        homepage: 'static/index.md',
+        loaders: {
+          GraphQLFileLoader: "@graphql-tools/graphql-file-loader"
+        },
+        docOption: {
+          pagination: false
+        },
+        printTypeOptions: {
+          deprecated: 'group'
+        },
+        groupByDirective: {
+          directive: "group",
+          field: "category",
+          fallback: "Common"
+        },
         customDirective: {
           "intOrigin": {
             descriptor: (directive, node) =>
@@ -60,10 +79,6 @@ const config: Config = {
                 node,
                 "default: `${value}`",
               ),
-          },
-          "*": {
-            descriptor: directiveDescriptor,
-            tag: directiveTag,
           },
           // ... optionally specific custom directive options
         },
