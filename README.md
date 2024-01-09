@@ -2,6 +2,11 @@
 
 ## Install
 
+### 
+```
+npx @yearnlune/create-graphql-doc
+```
+or
 ```
 npx create-docusaurus@latest [name] -p yarn -g shallow
 
@@ -9,7 +14,7 @@ npx create-docusaurus@latest [name] -p yarn -g shallow
 https://github.com/yearnlune/graphql-doc-template.git
 ```
 
-## Generate graphql docs
+## Generate GraphQL docs
 
 ```
 yarn run doc
